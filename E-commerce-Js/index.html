@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="fontawesome/css/all.min.css" />
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>E-commerce ||  Kollybright </title>
+    <style>
+        img{
+            height: 200px !important;
+        }
+        .inner-banner{
+            background-attachment: scroll;
+            height: 50vw;
+            background-image: url('images/bg.jpg');
+            /* background-position: cover; */
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+    </style>
+</head>
+<body>
+    <!-- container fluid -->
+    <!-- <div class="container-fluid"> -->
+       
+                <!-- the header row -->
+        <!-- <div class="row justify-content-center  mt-4"  > -->
+            <!-- container -->
+         
+            <!-- <div class="col-md-3 col-sm-12">
+                <div class="logo">
+                    <h1 class="text-danger text-center">GB</h1>
+                </div>
+            </div>
+             -->
+            <!-- <div class="col-md-3 col-sm-12  col-md-offset-2">
+                <div class="logo">
+                  <form action="">
+                      <div class="input-group">
+                          <input type="text" class="form-control" name="search" id="">
+                          <span class="input-group-text text-danger bg-danger"><i class="fas fa-search text-light"></i> </span>  
+                      </div>
+                  </form>
+                </div>
+            </div> -->
+
+            <!-- <div class="col-md-2 col-sm-6">
+                
+            </div>
+
+            <div class="col-md-3  col-sm-12 text-center ">
+                <div class="icons">
+                    <i class="fab fa-facebook"></i>
+                </div>
+            </div> -->
+        <!-- // the header row -->
+        <!-- </div>
+    </div> -->
+<!-- container fluid -->
+
+ <!-- Nav bar -->
+ <div class="navbar navbar-expand-sm bg-danger">
+    <div class="container-fluid">
+        
+        <ul class="navbar-nav d-flex justify-content-center  navbar-expand-sm  sticky-top  mx-auto">
+            <li class="nav-item">
+                <a href="#" class="nav-link text-light mx-5">Home</a>
+            </li>
+            <!-- <li class="nav-item">
+                <a href="#" class="nav-link text-light mx-5">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-light mx-5">About</a>
+            </li> -->
+             <li class="nav-item">
+                <a href="cart.html" class="nav-link text-light mx-5">Cart  <span id="cart" class="badge bg-warning"></span></a>
+            </li>
+
+        </ul>
+    </div>
+</div>
+<div class="row bg-danger">
+    <div class="container">
+        
+    </div>
+</div>
+<!-- //nav Bar -->
+
+<!-- Banner -->
+<div class="container-fluid banner">
+    <!-- inner-banner -->
+    <div class="inner-banner text-center p-5">
+        <!-- <h6>We always offer the best </h6>
+
+    <div class="best bg-secondary">
+        <h1 class="">BEST COLLECTION </h1>
+    </div>
+    <p>This is the best Place for all Your Products</p> -->
+
+    </div>
+    <!-- // innner-banner -->
+    <div class="container">
+        <div class="row justify-content-center ">
+          
+           <!-- col-md-4 -->
+           <div class="col-md-4 col-sm-12 my-2 ">
+            <div class="prod-con bg-light border">
+                <img src="images/handbag-brown2.jpg" class="img-fluid d-block mx-auto img-thumnail" alt="">
+               
+                <div class="cart-action my-3 text-center ">
+                    <h6>Brown Bag</h6>
+                    <h6>#1000  </h6>
+                    <button id="add_cart" onclick="getpro(this)" class="btn btn-success">Add To Cart </button>
+                </div>
+              
+            </div>         
+          </div>
+     <!--// col-md-4 -->
+      <!-- col-md-4 -->
+      <div class="col-md-4 col-sm-12 my-2 ">
+        <div class="prod-con bg-light border">
+            <img src="images/blue-handbag1.jpg" class="img-fluid d-block mx-auto img-thumnail" alt="">
+            <div class="cart-action my-3 text-center ">
+                <h6>Blue Bag</h6>
+                <h6>#300  </h6>
+                <button id="add_cart" onclick="getpro(this)" class="btn btn-success">Add To Cart </button>
+            </div>
+          
+        </div>         
+      </div>
+ <!--// col-md-4 -->
+  <!-- col-md-4 -->
+  <div class="col-md-4 col-sm-12 my-2">
+    <div class="prod-con bg-light border">
+        <img src="images/handbag-green.jpg" class="img-fluid d-block mx-auto img-thumnail" alt="">
+          <div class="cart-action my-3 text-center ">
+            <h6>Green Bag</h6>
+            <h6>#500  </h6>
+            <button id="add_cart" onclick="getpro(this)" class="btn btn-success">Add To Cart </button>
+        </div>
+      
+    </div>         
+  </div>
+<!--// col-md-4 -->
+        </div>
+  <!-- row -->
+        <div class="row justify-content-center mt-2 ">
+              <!-- col-md-3 -->
+  <div class="col-md-3 col-sm-12 my-2 ">
+    <div class="prod-con border bg-light ">
+        <img src="images/jeaan1.jpg" class="img-fluid d-block mx-auto img-thumnail" alt=""> 
+    <hr>
+<div class="cart-action my-3 text-center ">
+    <h6>Tick Jean</h6>
+    <h6>#3000  </h6>
+    <button id="add_cart" onclick="getpro(this)" class="btn btn-success">Add To Cart </button>
+</div>
+      
+    </div>         
+  </div>
+<!--// col-md-3 -->
+
+   <!-- col-md-3 -->
+   <div class="col-md-3 col-sm-12 my-2 ">
+    <div class="prod-con bg-light border">
+        <img src="images/jean2.jpg" class="img-fluid d-block mx-auto img-thumnail" alt="">
+<hr>
+<div class="cart-action my-3 text-center ">
+    <h6>Wrap Jean</h6>
+    <h6>#3500  </h6>
+    <button id="add_cart" onclick="getpro(this)" class="btn btn-success">Add To Cart </button>
+</div>
+      
+    </div>         
+  </div>
+<!--// col-md-3 -->
+
+   <!-- col-md-3 -->
+   <div class="col-md-3 col-sm-12  my-2">
+    <div class="prod-con bg-light border">
+        <img src="images/jacket-guy2.jpg" height="400" class="img-fluid d-block mx-auto img-thumnail" alt="">
+<hr>
+<div class="cart-action my-3 text-center ">
+    <h6>Jacket </h6>
+    <h6>#2000  </h6>
+    <button id="add_cart" onclick="getpro(this)" class="btn btn-success">Add To Cart </button>
+</div>      
+    </div>         
+  </div>
+<!--// col-md-3 -->
+   <!-- col-md-3 -->
+   <div class="col-md-3 col-sm-12  my-2">
+    <div class="prod-con bg-light border">
+        <img src="images/yellow-love-sunglasses.jpg" height="400" class="img-fluid d-block mx-auto img-thumnail" alt="">
+<hr>
+<div class="cart-action my-3 text-center ">
+    <h6>yello Glass</h6>
+    <h6>#1200  </h6>
+    <button id="add_cart" onclick="getpro(this)" class="btn btn-success">Add To Cart </button>
+</div>
+      
+    </div>         
+  </div>
+<!--// col-md-3 -->
+                 
+</div>
+    <!-- /row -->
+
+      <!-- row -->
+      <div class="row justify-content-center mt-2 ">
+        <!-- col-md-3 -->
+<div class="col-md-3 col-sm-12 my-2 ">
+<div class="prod-con border bg-light ">
+  <img src="images/sunglasses.jpg" class="img-fluid d-block mx-auto img-thumnail" alt=""> 
+<hr>
+<div class="cart-action my-3 text-center ">
+<h6>Sun Glasses</h6>
+<h6>#1500  </h6>
+<button id="add_cart" onclick="getpro(this)" class="btn btn-success">Add To Cart </button>
+
+</div>
+
+</div>         
+</div>
+<!--// col-md-3 -->
+
+<!-- col-md-3 -->
+<div class="col-md-3 col-sm-12 my-2 ">
+<div class="prod-con bg-light border">
+  <img src="images/guy-with-jacket.jpg" class="img-fluid d-block mx-auto img-thumnail" alt="">
+<hr>
+<div class="cart-action my-3 text-center ">
+<h6>G Jacket</h6>
+<h6>#5000  </h6>
+<button id="add_cart" onclick="getpro(this)" class="btn btn-success">Add To Cart </button>
+</div>
+
+</div>         
+</div>
+<!--// col-md-3 -->
+
+<!-- col-md-3 -->
+<div class="col-md-3 col-sm-12  my-2">
+<div class="prod-con bg-light border">
+  <img src="images/white-corporatebag.jpg" class="img-fluid d-block mx-auto  img-thumnail" alt="">
+<hr>
+<div class="cart-action my-3 text-center ">
+<h6>White Corporate Bag</h6>
+<h6>#3400  </h6>
+<button id="add_cart" onclick="getpro(this)" class="btn btn-success">Add To Cart </button>
+
+</div>      
+</div>         
+</div>
+<!--// col-md-3 -->
+<!-- col-md-3 -->
+<div class="col-md-3 col-sm-12  my-2">
+<div class="prod-con bg-light border">
+  <img src="images/happy-customer.jpg" class="img-fluid d-block mx-auto img-thumnail" alt="">
+<hr>
+<div class="cart-action my-3 text-center ">
+<h6>  Customer Package</h6>
+<h6>#6000   </h6>
+<button id="add_cart" onclick="getpro(this)" class="btn btn-success">Add To Cart </button>
+  <!-- <a href=""    class="btn btn-success "></a>
+      <a href="" class="btn btn-danger ">Details</a> -->
+</div>
+
+</div>         
+</div>
+<!--// col-md-3 -->
+           
+</div>
+<!-- /row -->
+        
+    </div>
+</div>
+<!-- //Banner -->
+</body>
+</html>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script>
+    // let product_id = document.getElementsByTagName('a');
+    // let product_id = document.getElementsByClassName('p_id')[0];
+    // console.log(product_id);
+    let totalcart = document.getElementById('cart'); 
+    totalcart.innerHTML = localStorage.length;
+    function getpro(element){
+    let price = element.previousElementSibling.innerHTML;
+    let product =  element.previousElementSibling.previousElementSibling.innerHTML;
+    price = price.slice(1,);
+   
+    // alert(price,  product );
+
+//    console.log(localSto/rage.getItem(product)); 
+   if (localStorage.getItem(product) !== null) {
+      alert(product + " Already Added To Cart");
+   }
+    else if (confirm(" Add " + product + " To cart ?")) {
+        localStorage.setItem(product, price);
+        totalcart.innerHTML = localStorage.length;
+        
+    }else{
+    }
+    }
+
+</script>

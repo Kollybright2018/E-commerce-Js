@@ -1,0 +1,15 @@
+.nav-item .nav-link{
+    font-weight: 700;
+    font-size: 20px;
+}
+
+a:hover{
+    /* background-color: rgb(0, 255, 179) !important; */
+    border-radius: 20px;
+    transition: all;
+    transform: rotate(2, 3);
+    /* padding: 0.7rem 5px; */
+}
+.logo h1{
+    font-weight: 900;
+}

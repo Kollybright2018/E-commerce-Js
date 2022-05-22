@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="fontawesome/css/all.min.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Cart ||  Kollybright </title>
+</head>
+<body onload="">
+
+    
+    <!-- container fluid -->
+    <div class="container-fluid">
+       
+        <!-- the header row -->
+<div class="row justify-content-center  mt-4"  >
+    <!-- container -->
+ 
+    <div class="col-md-3 col-sm-12">
+        <div class="logo">
+            <h1 class="text-danger text-center">GB</h1>
+        </div>
+    </div>
+    
+    <div class="col-md-3 col-sm-12  col-md-offset-2">
+        <div class="logo">
+          <form action="">
+              <div class="input-group">
+                  <input type="text" class="form-control" name="search" id="">
+                  <span class="input-group-text text-danger bg-danger"><i class="fas fa-search text-light"></i> </span>  
+              </div>
+          </form>
+        </div>
+    </div>
+
+    <div class="col-md-2 col-sm-6">
+        
+    </div>
+
+    <div class="col-md-3  col-sm-12 text-center ">
+        <div class="icons">
+            <i class="fab fa-facebook"></i>
+        </div>
+    </div>
+<!-- // the header row -->
+</div>
+</div>
+<!-- container fluid -->
+
+<!-- Nav bar -->
+<div class="navbar navbar-expand-sm bg-danger">
+<div class="container-fluid">
+
+<ul class="navbar-nav d-flex justify-content-center  mx-auto">
+    <li class="nav-item">
+        <a href="index.html" class="nav-link text-light mx-5">Home</a>
+    </li>
+    <!-- <li class="nav-item">
+        <a href="#" class="nav-link text-light mx-5">Blog</a>
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link text-light mx-5">About</a>
+    </li> -->
+     <li class="nav-item">
+        <a href="cart.html" class="nav-link text-light mx-5">Cart  <span id="cart" class="badge bg-warning"></span></a>
+    </li>
+
+</ul>
+</div>
+</div>
+
+
+    <!-- container-fluid -->
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row  mt-5 p-5">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Product Price</th>
+                                <th>Quatity</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <div  class="table-body">
+                            <tbody id="pros">
+                               
+                            </tbody>
+    
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3"></td>
+                                    <td row="">Total = <span id="sumTotal">0</span> </td>
+                                </tr>
+                            </tfoot>
+                        </div>
+                     </table>
+
+                     <button id="checkOut" class="btn btn-success"> CheckOut</button>
+                </div>
+            </div>
+        </div>
+        <!-- //container-fluid -->
+</body>
+</html>
+
+<script>
+    let totalcart = document.getElementById('cart'); 
+function sumTotal_(){
+// exclude the head and foot tr by start from 1 and - 1 from length.
+// This idea is from holy spirit 
+for (let i = 1; i < trs.length-1; i++) {
+     total =parseInt(trs[i].children[3].innerHTML) 
+    newSumTotal +=total;
+}
+sumTotal.innerHTML =newSumTotal;
+} //sumtotal
+totalcart.innerHTML =localStorage.length;
+    
+    let sumTotal = document.getElementById('sumTotal');
+    let prod_info = '';
+    let newSumTotal = 0;
+    let tbody= document.getElementById('pros');
+    let trs= document.getElementsByTagName('tr');
+    let total =0;
+    let checkOut =document.getElementById("checkOut");
+    let newAllCart = '';
+    let removeBtn = document.getElementsByClassName('remove');
+   
+    allCart();
+
+    function allCart(){ 
+        for (let i = 0; i < localStorage.length; i++) {
+    prod_info += '<tr>' +
+    //     '<td>' +  localStorage.key(i) + '</td>'  +
+        '<td>' +  localStorage.key(i) + '</td>' +
+        '<td>' +  localStorage.getItem(localStorage.key(i)) + '</td>' +
+        '<td>' +
+       ' <button id="" class="btn btn-danger minus " value="-"> - </button>' +
+       '<span class="btn btn-light"> 1 </span>' +
+       '  <button id="1" value="+" class="btn btn-success plus " > + </button>' +
+       '</td>' + 
+       '<td>' + localStorage.getItem(localStorage.key(i))+ ' </td>' +
+    //    '<td> <button  onclick="remove()"  id="' + localStorage.key(i) +
+    //     '"  class="btn remove btn-danger"> <i class="fas fa-trash"> </i>  </button> '  +  ' </td>' +
+        '</tr>'
+}
+  tbody.innerHTML= prod_info
+    }
+
+
+
+sumTotal_();
+    let button = document.getElementsByClassName('btn');
+    // console.log(button);
+function remove(proKey){
+    if (confirm("Press Okay to Remove " + localStorage.key(proKey) + " From cart")) {
+         localStorage.removeItem(localStorage.key(proKey));
+       totalcart.innerHTML =localStorage.length;
+    }
+
+}    
+
+     
+    totalcart.innerHTML =localStorage.length;
+let priceclass = document.getElementsByClassName('price');
+// console.log(price)
+let quantity = document.getElementById('quantity'); 
+let plus = document.getElementsByClassName('plus');
+let minus = document.getElementsByClassName('minus');
+// console.log(plus);
+// console.log(minus);
+
+for (let i = 0; i < plus.length; i++) {
+       var btn = plus[i];
+        // console.log(btn);
+        
+  btn.addEventListener('click', (e)=>{
+      btn = e.target;
+    //   get td
+     let td = btn.parentElement
+      let getQty = td.children[1]; 
+      let tr = td.parentElement;
+      let total =tr.children[3]; 
+      let price =tr.children[1];
+      let newQty = parseInt(getQty.innerHTML) + 1;
+      let newTotal =newQty *Number(price.innerHTML);
+      getQty.innerHTML = newQty;
+      total.innerHTML = newTotal;
+    //   now get the total overall 
+    let trs= document.getElementsByTagName('tr');
+    newSumTotal = 0;
+    // exclude the head and foot tr by start from 1 and - 1 from length.
+    // This idea is from holy spirit 
+    for (let i = 1; i < trs.length-1; i++) {
+        // console.log(trs[i]);
+        let total =parseInt(trs[i].children[3].innerHTML) 
+        // console.log(total);
+        newSumTotal +=total
+    }
+    // display new total
+    sumTotal.innerHTML = newSumTotal
+  }); //eventListner
+}
+
+for (let i = 0; i < minus.length; i++) {
+       var btn = minus[i];
+  btn.addEventListener('click', (e)=>{
+      btn = e.target;
+    //   get td
+     let td = btn.parentElement
+      let getQty = td.children[1]; 
+      let tr = td.parentElement;
+      let total =tr.children[3]; 
+      let price =tr.children[1];
+      let newQty = parseInt(getQty.innerHTML) - 1;
+      let newTotal =newQty *Number(price.innerHTML);
+
+    getQty.innerHTML = newQty
+    total.innerHTML = newTotal
+    // total.innerHTML = Number(total.innerHTML) * Number(newQty) 
+    if (getQty.innerHTML <1 ) {
+        getQty.innerHTML = 1;
+        total.innerHTML = price.innerHTML
+      }
+      let trs= document.getElementsByTagName('tr');
+    newSumTotal = 0
+    // exclude the head and foot tr by start from 1 and - 1 from length.
+    // This idea is from holy spirit 
+    for (let i = 1; i < trs.length-1; i++) {
+        // console.log(trs[i]);
+        let total =parseInt(trs[i].children[3].innerHTML) 
+        // console.log(total);
+        newSumTotal +=total
+        }
+        // display new total
+        sumTotal.innerHTML = newSumTotal
+    
+  });  
+}
+
+checkOut.addEventListener('click', (e)=>{
+    
+    if (localStorage.length === 0) {
+        alert("You Don't Have any Product in Your Cart");
+    }else{
+        if (confirm("You're About to purchase an items of  #" + newSumTotal + " Click Okay to Proceed with the Payment" )) {
+                    localStorage.setItem('checkOutAmount', newSumTotal);
+                    alert("Thank You")
+                    localStorage.clear();
+                    location.assign("index.html");
+                   }
+
+                   
+
+    }
+    console.log(newSumTotal);
+
+})
+for (let i = 0; i < priceclass.length; i++) {
+ sum +=  Number(priceclass[i].innerHTML);     
+}
+// console.log(sum);
+
+</script>
